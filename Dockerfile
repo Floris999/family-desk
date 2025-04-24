@@ -2,11 +2,14 @@
 FROM php:8.1-fpm
 
 # Installeer systeemvereisten en PHP-extensies
-RUN apt-get update && apt-get install -y \
+RUN apt-get clean && apt-get update -qq && apt-get install -y -qq \
     libzip-dev \
+    zip \
     unzip \
     curl \
     git \
+    libonig-dev \
+    libpng-dev \
     && docker-php-ext-install pdo pdo_mysql mbstring zip
 
 # Installeer Composer
