@@ -1,5 +1,5 @@
 # --- STAGE 1: Build Laravel + Vue ---
-    FROM php:8.1-fpm AS build
+    FROM php:8.2-fpm AS build
 
     # Installeer OS packages
     RUN apt-get update && apt-get install -y \
@@ -40,7 +40,7 @@
     RUN npm install && npm run build
     
     # --- STAGE 2: Runtime image ---
-    FROM php:8.1-fpm
+    FROM php:8.2-fpm
     
     RUN apt-get update && apt-get install -y \
         libzip-dev \
