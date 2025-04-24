@@ -14,10 +14,6 @@
         nodejs \
         npm
     
-    # Debug check: zijn freetype + jpeg aanwezig?
-    RUN ls -alh /usr/include | grep -E 'jpeg|freetype' || echo "Headers not found"
-    
-    # Configure GD extensie
     RUN docker-php-ext-configure gd --with-freetype --with-jpeg
     
     # Installeer PHP-extensies
@@ -27,10 +23,10 @@
     RUN docker-php-ext-install zip
     RUN docker-php-ext-install gd
     RUN docker-php-ext-install bcmath
-    RUN docker-php-ext-install tokenizer
     RUN docker-php-ext-install xml
+    # tokenizer is standaard → niet installeren
     
-    # Installeer Composer
+    # Composer
     RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     
     WORKDIR /var/www/html
@@ -40,13 +36,12 @@
     
     COPY . .
     
-    # Frontend build
+    # Build frontend
     RUN npm install && npm run build
     
-    # --- STAGE 2: Runtime container ---
+    # --- STAGE 2: Runtime image ---
     FROM php:8.1-fpm
     
-    # Alleen libraries nodig voor runtime
     RUN apt-get update && apt-get install -y \
         libzip-dev \
         libpng-dev \
@@ -56,9 +51,9 @@
         libxml2-dev \
         pkg-config
     
-    # Configure en installeer PHP-extensies
     RUN docker-php-ext-configure gd --with-freetype --with-jpeg
-    RUN docker-php-ext-install pdo pdo_mysql mbstring zip gd bcmath tokenizer xml
+    RUN docker-php-ext-install pdo pdo_mysql mbstring zip gd bcmath xml
+    # tokenizer weglaten
     
     WORKDIR /var/www/html
     
