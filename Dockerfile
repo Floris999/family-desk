@@ -2,9 +2,8 @@
 FROM php:8.1-fpm
 
 # Installeer systeemvereisten en PHP-extensies
-RUN apt-get clean && apt-get update -qq && apt-get install -y -qq \
+RUN apt-get update && apt-get install -y \
     libzip-dev \
-    zip \
     unzip \
     curl \
     git \
@@ -21,8 +20,12 @@ WORKDIR /var/www/html
 # Kopieer projectbestanden
 COPY . .
 
+# Controleer permissies
+RUN chown -R www-data:www-data /var/www/html
+USER www-data
+
 # Installeer PHP-afhankelijkheden
-RUN composer install --no-dev --optimize-autoloader --verbose
+RUN composer install --no-dev --optimize-autoloader --verbose --no-progress --no-interaction
 
 # Installeer Node.js en npm (voor Vue)
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
