@@ -32,9 +32,10 @@
     WORKDIR /var/www/html
     
     COPY composer.json composer.lock ./
-    RUN composer install --no-dev --optimize-autoloader --verbose
     
     COPY . .
+    
+    RUN composer install --no-dev --optimize-autoloader --verbose
     
     # Build frontend
     RUN npm install && npm run build
