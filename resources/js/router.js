@@ -3,7 +3,7 @@ import HomeRoute from "./Pages/HomeRoute.vue";
 import LoginRoute from "./Pages/LoginRoute.vue";
 import RegisterRoute from "./Pages/RegisterRoute.vue";
 import SettingsRoute from "./Pages/SettingsRoute.vue";
-import WishListRoute from "./Pages/WishListRoute.vue";
+import WishlistRoute from "./Pages/WishlistRoute.vue";
 import FormWishlistRoute from "./Pages/FormWishlistRoute.vue";
 import { useAuthStore } from "@stores/authStore";
 
@@ -12,7 +12,7 @@ const routes = [
   { path: "/login", component: LoginRoute },
   { path: "/register", component: RegisterRoute },
   { path: "/settings", component: SettingsRoute },
-  { path: "/wishlist", component: WishListRoute },
+  { path: "/wishlist", component: WishlistRoute },
   { path: "/add-wish", component: FormWishlistRoute },
 ];
 
