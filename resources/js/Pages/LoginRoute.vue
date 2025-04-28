@@ -44,13 +44,13 @@ const submitForm = async () => {
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
                 class="mx-auto h-10 w-auto"
-                src=""
+                src="../../../public/family.png"
                 alt="Your Company"
             />
             <h2
                 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900"
             >
-                Sign in to your account
+                Hi Familielid!
             </h2>
         </div>
 
@@ -60,7 +60,7 @@ const submitForm = async () => {
                     <label
                         for="email"
                         class="block text-sm/6 font-medium text-gray-900"
-                        >Email address</label
+                        >E-mailadres</label
                     >
                     <div class="mt-2">
                         <input
@@ -79,7 +79,7 @@ const submitForm = async () => {
                     <label
                         for="password"
                         class="block text-sm/6 font-medium text-gray-900"
-                        >Password</label
+                        >Wachtwoord</label
                     >
                     <div class="mt-2">
                         <input
@@ -99,17 +99,17 @@ const submitForm = async () => {
                         type="submit"
                         class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
-                        Sign in
+                        Inloggen
                     </button>
                 </div>
             </form>
 
             <p class="mt-10 text-center text-sm/6 text-gray-500">
-                Not a account?
+                Nog geen lid?
                 <a
                     href="/register"
                     class="font-semibold text-indigo-600 hover:text-indigo-500"
-                    >Registrate now</a
+                    >Maak nu een account</a
                 >
             </p>
         </div>

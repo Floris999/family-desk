@@ -7,7 +7,7 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
 
-
+// Post Routes
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::post('/wishes', [WishlistController::class, 'store']);
@@ -16,6 +16,7 @@ Route::get('/users', [UserController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
+// Get Routes
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/wishes', [WishlistController::class, 'index']);
