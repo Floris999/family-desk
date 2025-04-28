@@ -5,7 +5,6 @@ import { useAuthStore } from "@stores/authStore";
 const authStore = useAuthStore();
 
 const userPicture = authStore.user?.profile_picture || "'storage/profile_pictures/family.png'";
-
 </script>
 
 <template>
@@ -100,10 +99,18 @@ const userPicture = authStore.user?.profile_picture || "'storage/profile_picture
     <div class="md:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">
+        <a
+          href="/"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          aria-current="page"
+        >
           Home
         </a>
-        <a href="/wishlist" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">
+        <a
+          href="/wishlist"
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          aria-current="page"
+        >
           Wishlist
         </a>
         <a
@@ -112,6 +119,12 @@ const userPicture = authStore.user?.profile_picture || "'storage/profile_picture
         >
           Settings
         </a>
+        <router-link
+          class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          to="/logout"
+        >
+          Logout
+        </router-link>
       </div>
     </div>
   </nav>
