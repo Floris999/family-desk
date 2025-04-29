@@ -54,7 +54,7 @@ const submitForm = async () => {
                     <h1
                         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
                     >
-                        Create an account
+                        Maak een account
                     </h1>
                     <form
                         @submit.prevent="submitForm"
@@ -64,7 +64,7 @@ const submitForm = async () => {
                             <label
                                 for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >Your name</label
+                                >Naam</label
                             >
                             <input
                                 v-model="form.name"
@@ -83,7 +83,7 @@ const submitForm = async () => {
                             <label
                                 for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >Your email</label
+                                >E-mail</label
                             >
                             <input
                                 v-model="form.email"
@@ -102,7 +102,7 @@ const submitForm = async () => {
                             <label
                                 for="password"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >Password</label
+                                >Wachtwoord</label
                             >
                             <input
                                 v-model="form.password"
@@ -124,7 +124,7 @@ const submitForm = async () => {
                             <label
                                 for="confirmPassword"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >Confirm password</label
+                                >Bevestig wachtwoord</label
                             >
                             <input
                                 v-model="form.confirmPassword"
@@ -140,7 +140,7 @@ const submitForm = async () => {
                             type="submit"
                             class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                         >
-                            Create an account
+                            Account aanmaken
                         </button>
                     </form>
                 </div>
